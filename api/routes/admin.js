@@ -117,9 +117,9 @@ router.post('/markMail', async (req, res) => {
         // let recipients = "'"; let i=0;
         // const nosrecp = participants.length;
         // for (i=0; i<(nosrecp-1); i++){
-        //     recipients = recipients + participants[i] + "' ";
+        //     recipients = recipients + participants[i].email + "' ";
         // }
-        // recipients = recipients + participants[nosrecp-1];
+        // recipients = recipients + participants[nosrecp-1].email;
         // sendEmail(recipients, req.body.mailSubject, "<div style='text-align:center'><img src=" + link + "></div>" + "<div>" + req.body.mailBody + "</div>" + "<br><br> See you around, till then, stay musical!<br><br> Team NAAD");
     } catch(err) {
         console.log(err);
