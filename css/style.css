@@ -1617,3 +1617,52 @@ input[type=submit]:hover {
     font-size: 13px;
     color: #ddd;
 }
+
+.wrapper {
+    margin: 50px auto;
+    overflow: hidden;
+    padding: 20px;
+    width: 55%;
+}
+
+.data-one,
+.data-two,
+.data-three {
+    display: inline-block;
+}
+
+.circliful {
+    position: relative;
+    padding-left: 25px;
+}
+
+.circle-text,
+.circle-info {
+    width: 100%;
+    position: absolute;
+    text-align: left;
+    display: inline-block;
+    font-size: 10px;
+    text-shadow: 0px 2px;
+    padding-inline: 50px;
+}
+
+.circle-text-half,
+.circle-info-half {
+    width: 100%;
+    position: absolute;
+    text-align: left;
+    display: inline-block;
+    font-size: 12px;
+    padding-inline: 50px;
+}
+
+.circle-info {
+    color: #999;
+}
+
+.circliful .fa {
+    margin: -10px 3px 0 3px;
+    position: relative;
+    bottom: 4px;
+}
