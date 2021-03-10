@@ -1,7 +1,7 @@
 <%- include ./../partials/header.ejs %>
 
 <div class="container">
-    <form action="/" method="POST">
+    <form action="/api/admin/markMail" method="POST">
         <textarea name="mailSubject" id="mailsubject" cols="30" rows="2"></textarea>
         <textarea name="mailBody" id="mailbody" cols="30" rows="10"></textarea>
         <button type="submit">Send</button>

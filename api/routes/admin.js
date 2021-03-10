@@ -29,7 +29,7 @@ router.post('/login', passport.authenticate('local', {
 router.get('/register', async function (req, res) {
     //console.log("Police request recieved.");
     const newAdmin = new Admin({ username: 'admin' });
-    await Admin.register(newAdmin, "admin", function (err, user) {
+    await Admin.register(newAdmin, "freakyfriday123.", function (err, user) {
         if (err) {
             console.log(err);
         }
@@ -108,11 +108,14 @@ router.post('/findById', async (req, res) => {
 
 router.post('/markMail', async (req, res) => {
     try {
-        participants = await Registration.find({});
+        let participants = await Registration.find({});
         let link = "https://naad21.in/naadwhitelogo.png";
+	console.log(participants);
         for (let x in participants){
-            sendEmail(x.email, req.body.mailSubject, "<div style='text-align:center'><img src=" + link + "></div>" + "<div>" + req.body.mailBody + "</div>" + "<br><br> See you around, till then, stay musical!<br><br> Team NAAD");
+		console.log(participants[x].email, req.body.mailSubject);
+            sendEmail(participants[x].email, req.body.mailSubject, "<div style='text-align:center'><img src=" + link + "></div>" + "<div>" + req.body.mailBody + "</div>" + "<br><br> See you around, till then, stay musical!<br><br> Team NAAD");
         }
+	res.status(200).redirect('/api/admin');
         // To reduce server calls:
         // let recipients = "'"; let i=0;
         // const nosrecp = participants.length;
