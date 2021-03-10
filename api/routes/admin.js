@@ -112,7 +112,7 @@ router.post('/markMail', async (req, res) => {
         let link = "https://naad21.in/naadwhitelogo.png";
 	console.log(participants);
         for (let x in participants){
-		console.log(participants[x].email, req.body.mailSubject);
+		    console.log(participants[x].email, req.body.mailSubject);
             sendEmail(participants[x].email, req.body.mailSubject, "<div style='text-align:center'><img src=" + link + "></div>" + "<div>" + req.body.mailBody + "</div>" + "<br><br> See you around, till then, stay musical!<br><br> Team NAAD");
         }
 	res.status(200).redirect('/api/admin');
