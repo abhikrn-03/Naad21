@@ -58,7 +58,7 @@
                     <ul class="nav-menu">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="index.html#about">About</a></li>
-                        <li><a href="REGISTRATION.html">Registration</a></li>
+                        <li class="menu-active"><a href="REGISTRATION.html">Registration</a></li>
                         <li><a href="GALLERY.html">Gallery</a></li>
                         <li class="menu-has-children"><a href="#">Informal</a>
                             <ul>
@@ -66,7 +66,7 @@
                                 <li><a href="ANTAAKSHARI.html">ANTAAKSHARI</a></li>
                             </ul>
                         </li>
-                        <li class="menu-has-children menu-active"><a href="#">FORMAL</a>
+                        <li class="menu-has-children"><a href="#">FORMAL</a>
                             <ul>
                                 <li><a href="DHUN.html">DHUN</a></li>
                                 <li><a href="ALANKAAR.html">ALANKAAR</a></li>
@@ -93,6 +93,79 @@
 
 
 
+            <!--==========================
+        Services Section
+      ============================-->
+
+            <section id="services">
+                <div class="container">
+                    <center>
+                        <br><br>
+                        <h1><b>REGISTER YOURSELF!</b></h1>
+                    </center>
+
+                    <div>
+
+
+                        <form name="contactform" id="contactform" onsubmit="return false">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Name*</label>
+                                    <input type="text" name="name" class="form-control" placeholder="Enter Name">
+                                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                                </div>
+
+                                <div class="form-group">
+                                    <label>School/College*</label>
+                                    <input type="text" name="school" class="form-control" id="Institute" placeholder="Enter Name" required />
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Contact*</label>
+                                    <input type="text" name="contact" class="form-control" id="contactno" placeholder="Enter Contact" required />
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Email*</label>
+                                    <input type="email" name="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter Email" required />
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Branch</label>
+                                    <input type="text" name="branch" class="form-control" id="Branch" placeholder="Enter Branch">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Gender*</label>
+                                    <select name="gender" id="gender" class="form-control">
+                    <option selected="selected" value="Female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Others">Others</option>
+                  </select>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Roll No</label>
+                                    <input type="text" name="rollNo" class="form-control" id="Rollno" placeholder="Enter Roll Number">
+                                </div>
+
+
+                                <div id="naad_id">
+                                    <input type="submit" class="submit" id="submit_reg" value="Register" required />
+                                </div>
+
+
+                            </fieldset>
+
+                        </form>
+                    </div>
+
+
+                </div>
+            </section>
+            <!-- #services -->
 
 
 
@@ -101,52 +174,6 @@
             <!--==========================
         About Us Section
       ============================-->
-            <section id="mandramayhem">
-                <div class="container">
-
-                    <header class="section-header">
-                        <br><br><br><br><br><br>
-                        <h3> RAAGESHREE<br><br>
-                            <img src="img/indexpage/raageshree.JPG" style="width: 600px;height:400px;">
-                            <h4>
-                                <center>(Classical Solo Singing Competition)</center>
-                            </h4>
-                        </h3>
-
-
-                        RULES & REGULATIONS:-<br><br> 1. Only pure classical compositions are allowed. Bollywood, Semi-Classical songs are not allowed.
-                        <br> 2. The vocalist/accompanist (if any) must be visible singing/playing in the video submitted.
-                        <br> 3. Upload the file on google drive with the name “(NAAD ID)-Raageshree” for eg. “006-Raageshree” where 006 is the NAAD ID of the participant and then share the link on the portal.
-                        <br> 4. The decision of the judges shall be final and binding.
-                        <br> 5. General Guidelines:
-                        <br> &emsp; a. Participants can use an electronic tanpura and/or electronic tabla as per their convenience.
-                        <br> &emsp; b. Participants can either perform solo or can bring up to 2 accompanists for the competition but the judgement will be based only on vocal<br>&emsp; performance.
-                        <br> &emsp; c. Autotune/Pitch correction is strictly not allowed.
-                        <br> &emsp; d. Video duration should be 8-10 minutes.
-
-                        <br><br>
-                        <br>
-
-                    </header>
-
-                    <center> <button class="btn btn-primary"><a href="#">Register</a></button></center>
-                </div>
-            </section>
-            <!-- #about -->
-
-
-            <script>
-                function disp_mayhem() {
-                    var x = document.getElementById("mandramayhem_reg");
-                    if (x.style.display === "none") {
-                        x.style.display = "block";
-                    } else {
-                        x.style.display = "none";
-                    }
-                }
-            </script>
-
-
 
             <!-- #about -->
 
