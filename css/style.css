@@ -1653,8 +1653,9 @@ input[type=submit]:hover {
     position: absolute;
     text-align: left;
     display: inline-block;
-    font-size: 12px;
-    padding-inline: 50px;
+    font-size: 15px;
+    padding-top: 75px;
+    padding-inline: 35px;
 }
 
 .circle-info {
