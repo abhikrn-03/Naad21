@@ -28,7 +28,6 @@ const sendEmail = async (email, subject, msg) => {
                 resolve(true);
             }
         });
-        transport.close();
         //return resp;
     });
 }
