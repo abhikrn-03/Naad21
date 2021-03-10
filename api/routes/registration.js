@@ -124,7 +124,7 @@ router.post('/registration', async (req, res) => {
         }
         else {
             console.log(data[0].email);
-            var link = "https://naad.dhwanibitmesra.live/naadwhitelogo.png";
+            var link = "https://naad21.in/naadwhitelogo.png";
             sendEmail(data[0].email, "Registration for NAAD'20", "<div style='text-align:center'><img src=" + link + "></div><i>Music, even in situations of the greatest horror, should never be painful to the ear but should flatter and charm it, and thereby always remain music. - Mozart</i> <br><br><br> Congratulations, <b>" + data[0].name + "</b>! You have succesfully registered for NAAD'20. Your NAAD ID is <strong>NAAD00" + data[0].id + "</strong>. Kindly keep it safe for future purposes.<br><br>For any queries, feel free to reply to this email or contact dhwani.bitmesra@gmail.com.<br><br> See you around, till then, stay musical!<br><br> Team NAAD");
         }
         res.json(data);
