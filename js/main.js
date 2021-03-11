@@ -562,7 +562,7 @@ jQuery(document).ready(function($) {
                         .html(text)
                         .prepend(icon)
                         .css({
-                            'line-height': lineHeight + 'px',
+                            'line-height': '160px',
                             'font-size': customSettingsObj.fontsize + 'px'
                         });
                 }
@@ -577,9 +577,6 @@ jQuery(document).ready(function($) {
                     $('<span></span>')
                         .appendTo(obj)
                         .addClass('circle-info-half')
-                        .css(
-                            'line-height', (customSettingsObj.dimension * factor) + 'px'
-                        )
                         .text(info);
                 }
 

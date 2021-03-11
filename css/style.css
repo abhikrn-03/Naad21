@@ -125,6 +125,7 @@ body {
     background: #fff;
     color: #666666;
     font-family: "Open Sans", sans-serif;
+    overflow-x: hidden;
 }
 
 td {
@@ -1633,7 +1634,7 @@ input[type=submit]:hover {
 
 .circliful {
     position: relative;
-    padding-left: 25px;
+    /* padding-left: 25px; */
 }
 
 .circle-text,
@@ -1654,7 +1655,7 @@ input[type=submit]:hover {
     text-align: left;
     display: inline-block;
     font-size: 15px;
-    padding-top: 75px;
+    padding-top: 100px;
     padding-inline: 35px;
 }
 
@@ -1666,4 +1667,13 @@ input[type=submit]:hover {
     margin: -10px 3px 0 3px;
     position: relative;
     bottom: 4px;
+}
+
+.event-title{
+    margin:auto;
+}
+
+.event-image{
+    object-fit: cover;
+    width: 100%;
 }
