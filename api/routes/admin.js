@@ -7,7 +7,7 @@ const Registration = require('./../models/registration');
 const sendEmail = require('./../utils/sendEmail');
 
 router.get('/', async (req, res) => {
-    return res.render('login');
+    return res.redirect('/api/admin/login');
 });
 
 
@@ -18,11 +18,16 @@ router.get('/login', async (req, res) => {
     return res.render('login');
 });
 
-router.post('/login', passport.authenticate('local', {
-    sucessRedirect:'findEvent',
-    failureRedirect: 'login',
-    failureFlash: true
-}));
+router.post('/login', passport.authenticate('local', {failureRedirect: '/api/admin/login'}), 
+	(req,res)=>{
+		console.log("admin logged in succesfully");
+		res.redirect('findEvent');
+	});
+
+router.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/api/admin');
+});
 
 router.get('/register', async function (req, res) {
     //console.log("Police request recieved.");
@@ -42,27 +47,25 @@ router.get('/findEvent', (req, res) => {
     if (req.isAuthenticated() === false) {
         res.redirect('login');
     }
-    res.render('findEvent');
+   else  res.render('findEvent');
 });
 
 router.get('/findById', (req, res) => {
     if (req.isAuthenticated() === false) {
         res.redirect('login');
     }
-    res.render('findById');
+    else res.render('findById');
 });
 
 router.get('/markMail', (req, res) => {
     if (req.isAuthenticated() === false) {
         res.redirect('login');
     }
-    res.render('markMail');
+    else res.render('markMail');
 });
 
 
 router.post('/findEvent', async (req, res) => {
-
-
     for (var x in req.body) {
         if (req.body[x] === '') {
             //console.log(x);
@@ -108,21 +111,22 @@ router.post('/findById', async (req, res) => {
 
 router.post('/markMail', async (req, res) => {
     try {
-    //     let participants = await Registration.find({});
-    //     let link = "https://naad21.in/naadwhitelogo.png";
-	// console.log(participants);
+         let participants = await Registration.find({});
+         let link = "https://naad21.in/naadwhitelogo.png";
+
     //     for (let x in participants){
 	// 	    console.log(participants[x].email, req.body.mailSubject);
     //         sendEmail(participants[x].email, req.body.mailSubject, "<div style='text-align:center'><img src=" + link + "></div>" + "<div>" + req.body.mailBody + "</div>" + "<br><br> See you around, till then, stay musical!<br><br> Team NAAD");
     //     }
 	// res.status(200).redirect('/api/admin');
         // To reduce server calls:
-        let recipients = "'"; let i=0;
+        let recipients = "' "; let i=0;
         const nosrecp = participants.length;
-        for (i=0; i<(nosrecp-1); i++){
+        for (i=0; i<(nosrecp); i++){
+	    console.log(`recipient ${participants[i].email} added`);
             recipients = recipients + participants[i].email + ", ";
         }
-        recipients = recipients + participants[nosrecp-1].email + "'";
+        recipients = recipients + participants[nosrecp-1].email + " '";
         sendEmail(recipients, req.body.mailSubject, "<div style='text-align:center'><img src=" + link + "></div>" + "<div>" + req.body.mailBody + "</div>" + "<br><br> See you around, till then, stay musical!<br><br> Team NAAD");
         res.status(200).redirect('/api/admin');
     } catch(err) {
