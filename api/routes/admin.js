@@ -19,17 +19,15 @@ router.get('/login', async (req, res) => {
 });
 
 router.post('/login', passport.authenticate('local', {
+    sucessRedirect:'findEvent',
     failureRedirect: 'login',
     failureFlash: true
-}), (req, res) => {
-    console.log(req.body);
-    res.redirect('findEvent');
-});
+}));
 
 router.get('/register', async function (req, res) {
     //console.log("Police request recieved.");
     const newAdmin = new Admin({ username: 'admin' });
-    Admin.register(newAdmin, "freakyfriday123.", function (err, user) {
+    Admin.register(newAdmin, "dhwani123", function (err, user) {
         if (err) {
             console.log(err);
 		return res.sendStatus(500);
