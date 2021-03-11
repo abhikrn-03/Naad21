@@ -29,13 +29,15 @@ router.post('/login', passport.authenticate('local', {
 router.get('/register', async function (req, res) {
     //console.log("Police request recieved.");
     const newAdmin = new Admin({ username: 'admin' });
-    await Admin.register(newAdmin, "freakyfriday123.", function (err, user) {
+    Admin.register(newAdmin, "freakyfriday123.", function (err, user) {
         if (err) {
             console.log(err);
+		return res.sendStatus(500);
         }
         console.log(user);
+	return res.sendStatus(200);
     });
-    res.sendStatus(200);
+    
 });
 
 router.get('/findEvent', (req, res) => {
@@ -71,7 +73,7 @@ router.post('/findEvent', async (req, res) => {
     }
     //console.log(req.body);
 
-    await Event.find(req.body, (err, data) => {
+    Event.find(req.body, (err, data) => {
         if (err) {
             console.log(err);
             res.redirect('findEvent');
@@ -94,7 +96,7 @@ router.post('/findById', async (req, res) => {
     }
     //console.log(req.body);
 
-    await Registration.find(req.body, (err, data) => {
+    Registration.find(req.body, (err, data) => {
         if (err) {
             console.log(err);
             res.redirect('findById');
