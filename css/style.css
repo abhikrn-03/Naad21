@@ -1654,7 +1654,7 @@ input[type=submit]:hover {
     position: absolute;
     text-align: left;
     display: inline-block;
-    font-size: 15px;
+    font-size: 14px;
     padding-top: 100px;
     padding-inline: 35px;
 }
