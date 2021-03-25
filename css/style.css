@@ -815,6 +815,11 @@ body.mobile-nav-active #mobile-nav-toggle {
     transition: 0.3s;
 }
 
+.das-logo{
+    text-align: center;
+    margin: auto;
+}
+
 #about .about-col i {
     font-size: 36px;
     line-height: 1;
